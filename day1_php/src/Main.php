@@ -12,6 +12,7 @@ class Main
     public function __construct()
     {
         $this->frequencyCalc = new FrequencyCalculator();
+        $this->frequencyCalc->setFrequency(0);
     }
 
     public function run() {
@@ -25,7 +26,8 @@ class Main
             }
             fclose($handle);
         }
-        print_r($this->frequencyCalc->getFrequency());
+        print_r(sprintf('Part 1 : %s', $this->frequencyCalc->getFrequency()));
+        print_r(sprintf('Part 2 : %s', $this->frequencyCalc->getFirstFrequencyReachedTwice()));
     }
 }
 

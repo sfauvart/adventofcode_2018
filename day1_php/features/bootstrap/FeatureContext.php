@@ -61,11 +61,19 @@ class FeatureContext implements Context
 
     // Puzzle Part 2
     /**
+     * @When I repeat the same list of frequency change
+     */
+    public function iRepeatTheSameListOfFrequencyChange()
+    {
+        return true;
+    }
+
+    /**
      * @Then I should have first frequency reached twice is :arg1
      */
     public function iShouldHaveFirstFrequencyReachedTwiceIs($arg1)
     {
-        throw new PendingException();
+        Assert::assertEquals($arg1, $this->frequencyCalc->getFirstFrequencyReachedTwice());
     }
 
 }

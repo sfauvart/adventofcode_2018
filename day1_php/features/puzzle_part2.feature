@@ -25,10 +25,9 @@ Feature: Puzzle Day 1 - Part 2
     Given Current frequency is 0
     And I add frequency change '+1'
     And I add frequency change '-2'
-    And I add frequency change '-3'
+    And I add frequency change '+3'
     And I add frequency change '+1'
-    And I add frequency change '+1'
-    And I add frequency change '-2'
+    When I repeat the same list of frequency change
     Then I should have first frequency reached twice is 2
 
   Scenario: Example 2
@@ -45,3 +44,21 @@ Feature: Puzzle Day 1 - Part 2
     And I add frequency change '-2'
     And I add frequency change '-4'
     Then I should have first frequency reached twice is 10
+
+  Scenario: Example 4
+    Given Current frequency is 0
+    And I add frequency change '-6'
+    And I add frequency change '+3'
+    And I add frequency change '+8'
+    And I add frequency change '+5'
+    And I add frequency change '-6'
+    Then I should have first frequency reached twice is 5
+
+  Scenario: Example 4
+    Given Current frequency is 0
+    And I add frequency change '+7'
+    And I add frequency change '+7'
+    And I add frequency change '-2'
+    And I add frequency change '-7'
+    And I add frequency change '-4'
+    Then I should have first frequency reached twice is 14
