@@ -52,7 +52,7 @@ class FrequencyCalculator
         $this->results[] = $result;
 
         $occurrence = 1;
-        for ($i=count($this->results)-2; $i>=0; --$i) {
+        for ($i=count($this->results)-2; $i>=0; $i--) {
             if ($this->results[$i] == $result) {
                 $occurrence = $this->occurrences[$i] + 1;
                 if (null === $this->firstFrequencyReachedTwice) {
@@ -83,7 +83,7 @@ class FrequencyCalculator
 
         $nbIter = 0;
         while ($this->firstFrequencyReachedTwice === null) {
-            for ($i=0; $i<$frequenciesToRepeat; ++$i) {
+            for ($i=0; $i<$frequenciesToRepeat; $i++) {
                 $this->addFrequency($this->frequencies[$i]);
             }
 //            foreach ($this->occurrences as $key => $occurrence) {
